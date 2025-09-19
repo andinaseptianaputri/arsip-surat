@@ -9,10 +9,15 @@ class Surat extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    protected $fillable = [
+        'nomor_surat',
+        'kategori_id',
+        'judul',
+        'file_path',
+    ];
 
     public function kategori()
     {
-        return $this->belongsTo(Kategori::class);
+        return $this->belongsTo(\App\Models\Kategori::class, 'kategori_id');
     }
 }

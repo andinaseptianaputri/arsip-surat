@@ -6,23 +6,33 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\AboutController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('surat.index');
 });
 
-Route::get('/', [SuratController::class, 'index'])->name('surat.index');
-Route::get('/surat/create', [SuratController::class, 'create'])->name('surat.create');
-Route::post('/surat', [SuratController::class, 'store'])->name('surat.store');
-Route::delete('/surat/{surat}', [SuratController::class, 'destroy'])->name('surat.destroy');
-Route::get('/surat/unduh/{surat}', [SuratController::class, 'download'])->name('surat.download');
-Route::get('/surat/{surat}/view', [SuratController::class, 'show'])->name('surat.show');
-Route::get('/surat/edit/{surat}', [SuratController::class, 'edit'])->name('surat.edit');
-Route::put('/surat/update/{surat}', [SuratController::class, 'update'])->name('surat.update');
+Route::prefix('surat')->name('surat.')->group(function () {
+    Route::get('/', [SuratController::class, 'index'])->name('index');
+    Route::get('/create', [SuratController::class, 'create'])->name('create');
+    Route::post('/', [SuratController::class, 'store'])->name('store');
+    Route::get('/{surat}/view', [SuratController::class, 'show'])->name('show');
+    Route::get('/edit/{surat}', [SuratController::class, 'edit'])->name('edit');
+    Route::put('/update/{surat}', [SuratController::class, 'update'])->name('update');
+    Route::delete('/{surat}', [SuratController::class, 'destroy'])->name('destroy');
 
-Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
-Route::get('/kategori/create', [KategoriController::class, 'create'])->name('kategori.create');
-Route::post('/kategori', [KategoriController::class, 'store'])->name('kategori.store');
-Route::get('/kategori/{kategori}/edit', [KategoriController::class, 'edit'])->name('kategori.edit');
-Route::put('/kategori/{kategori}', [KategoriController::class, 'update'])->name('kategori.update');
-Route::delete('/kategori/{kategori}', [KategoriController::class, 'destroy'])->name('kategori.destroy');
+    // Route khusus download file surat
+    Route::get('/unduh/{surat}', [SuratController::class, 'download'])->name('download');
+});
+
+Route::prefix('kategori')->name('kategori.')->group(function () {
+    Route::get('/', [KategoriController::class, 'index'])->name('index');
+    Route::get('/create', [KategoriController::class, 'create'])->name('create');
+    Route::post('/', [KategoriController::class, 'store'])->name('store');
+    Route::get('/{kategori}/edit', [KategoriController::class, 'edit'])->name('edit');
+    Route::put('/{kategori}', [KategoriController::class, 'update'])->name('update');
+    Route::delete('/{kategori}', [KategoriController::class, 'destroy'])->name('destroy');
+});
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});
