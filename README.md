@@ -40,7 +40,7 @@ Aplikasi Arsip Surat ini dibangun dengan Laravel sebagai solusi digital untuk me
 ## Cara Menjalankan
 - Clone repository
    ```bash
-   **[git clone](https://github.com/rismasyafrillia/Arsip-Desa-Karangduren)
+   **[git clone] https://github.com/meifa10/LSP-Polinema-Meifa-Arsip-Surat.git
    cd arsip-surat
    composer install
    npm install && npm run dev
