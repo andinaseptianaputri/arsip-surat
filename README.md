@@ -60,7 +60,7 @@ Aplikasi Arsip Surat ini dibangun dengan Laravel sebagai solusi digital untuk me
 ![Kategori](ss/KategoriSurat.png)
 
 ### Form Tambah Kategori
-![Form](ss/KategoriSuratTambah.png.png)
+![Form](ss/KategoriSuratTambah.png)
 
 ### About
 ![About](ss/About.png)
