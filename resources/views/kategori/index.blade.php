@@ -5,7 +5,8 @@
     <h3>Kategori Surat</h3>
     <p>Berikut adalah kategori surat yang bisa digunakan untuk melabeli surat.</p>
 
-    <a href="{{ route('kategori.create') }}" class="btn btn-success mb-3">
+    {{-- Tombol biru --}}
+    <a href="{{ route('kategori.create') }}" class="btn btn-primary mb-3">
         [+] Tambah Kategori Baru...
     </a>
 
@@ -14,8 +15,8 @@
             <tr>
                 <th>ID Kategori</th>
                 <th>Nama Kategori</th>
-                <th>Keterangan</th> {{-- pindahkan isi kolom aksi ke sini --}}
-                <th>Aksi</th> {{-- heading baru untuk tombol edit/hapus --}}
+                <th>Keterangan</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +24,7 @@
                 <tr>
                     <td>{{ $kategori->id }}</td>
                     <td>{{ $kategori->nama_kategori }}</td>
-                    <td>{{ $kategori->keterangan ?? '-' }}</td> {{-- ini sekarang isi keterangan --}}
+                    <td>{{ $kategori->keterangan ?? '-' }}</td>
                     <td>
                         <form action="{{ route('kategori.destroy', $kategori->id) }}" method="POST" style="display:inline;">
                             @csrf

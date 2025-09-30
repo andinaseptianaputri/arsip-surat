@@ -8,7 +8,7 @@
     <style>
         /* === Sidebar Styling === */
         .sidebar {
-            background-color: #6a0dad; /* Warna Ungu */
+            background-color: #1e3a8a; /* Biru tua */
             min-height: 100vh;
             padding: 20px;
             width: 250px;
@@ -17,29 +17,30 @@
         .sidebar h4 {
             font-size: 24px;
             font-weight: bold;
-            color: #ffffff;
+            color: #e0f2fe; /* Biru muda */
             margin-bottom: 25px;
             text-align: center;
         }
 
         .sidebar .nav-link {
             font-size: 18px;
-            color: #ffffff;
+            color: #e0f2fe; /* Biru muda */
             padding: 10px 5px;
             border-radius: 8px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .sidebar .nav-link:hover {
-            background-color: #580b99; /* Warna ungu lebih gelap saat hover */
-            color: #ffd700; /* Kuning saat hover */
+            background-color: #2563eb; /* Biru cerah saat hover */
+            color: #facc15; /* Kuning emas saat hover */
+            transform: translateX(6px); /* Efek geser ke kanan */
         }
 
         /* Konten utama */
         .content {
             flex-grow: 1;
             padding: 20px;
-            background-color: #f8f9fa;
+            background-color: #f1f5f9; /* Abu terang */
         }
     </style>
 </head>
@@ -50,13 +51,13 @@
             <h4>Menu</h4>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('surat.index') }}">⭐ Arsip</a>
+                    <a class="nav-link" href="{{ route('surat.index') }}">📂 Arsip</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('kategori.index') }}">⚙️ Kategori Surat</a>
+                    <a class="nav-link" href="{{ route('kategori.index') }}">📑 Kategori Surat</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('about') }}">ⓘ About</a>
+                    <a class="nav-link" href="{{ route('about') }}">ℹ️ Tentang</a>
                 </li>
             </ul>
         </div>

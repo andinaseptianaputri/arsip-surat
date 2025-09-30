@@ -5,7 +5,7 @@
 <p>Berikut adalah surat-surat yang telah terbit dan diarsipkan.<br>Klik "Lihat" pada kolom aksi untuk menampilkan surat.</p>
 
 @if(session('success'))
-    <div class="alert alert-success">{{ session('success') }}</div>
+    <div class="alert alert-primary">{{ session('success') }}</div>
 @endif
 
 <form action="{{ route('surat.index') }}" method="GET" class="mb-3">
@@ -39,7 +39,7 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                     </form>
-                    <a href="{{ route('surat.download', $surat) }}" class="btn btn-success btn-sm">Unduh</a>
+                    <a href="{{ route('surat.download', $surat) }}" class="btn btn-primary btn-sm">Unduh</a>
                     <a href="{{ route('surat.show', $surat) }}" class="btn btn-info btn-sm">Lihat >></a>
                 </div>
             </td>

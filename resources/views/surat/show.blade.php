@@ -14,6 +14,6 @@
 
 <div class="d-flex gap-2 mt-3">
     <a href="{{ route('surat.index') }}" class="btn btn-secondary"><< Kembali</a>
-    <a href="{{ route('surat.download', $surat) }}" class="btn btn-success">Unduh</a>
+    <a href="{{ route('surat.download', $surat) }}" class="btn btn-primary">Unduh</a>
 </div>
 @endsection
